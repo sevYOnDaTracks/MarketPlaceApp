@@ -20,8 +20,9 @@ public class Produit {
 		// TODO Auto-generated constructor stub
 	}
     
-    public Produit(String nom) {
+    public Produit(String nom , Long quantite) {
     	this.nom = nom ;
+    	this.quantite = quantite;
     }
     
     public Long getId() {
