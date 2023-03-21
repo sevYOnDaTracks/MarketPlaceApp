@@ -4,9 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "categorie")
 public class Categorie {
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,10 +22,14 @@ public class Categorie {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Categorie(String nom , String description) {
-		this.nom = nom;
-		this.description = description ;
-	}
+	/*
+	 * Constructeur pour les relations entres les tables
+	 */
+	public Categorie(Long id ,String nom , String description) {
+	       this.id = id;
+	       this.nom = nom;
+	       this.description = description ;
+	   }
 	
 	public String getNom() {
 		return nom;

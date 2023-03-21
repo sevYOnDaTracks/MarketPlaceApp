@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name = "produit")
 public class Produit {
 
     @Id
@@ -20,7 +23,7 @@ public class Produit {
     private long quantite;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categorie_id")
+    @JoinColumn(name = "categorie_id" , referencedColumnName = "id")
     private Categorie categorie; 
     
     public Produit() {
