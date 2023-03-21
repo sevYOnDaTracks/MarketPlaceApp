@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.egance.entities.Produit;
-import fr.egance.entities.Utilisateur;
 import fr.egance.repository.ProduitRepository;
 
 @RestController
@@ -29,7 +28,7 @@ public class ProduitController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Produit> createUtilisateurs(@RequestBody Produit produit) {
+	public ResponseEntity<Produit> createProduit(@RequestBody Produit produit) {
 		Produit produitsaved = produitRepository.save(produit);
 		return ResponseEntity.status(HttpStatus.CREATED).body(produitsaved);
 	}
